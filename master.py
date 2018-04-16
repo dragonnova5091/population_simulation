@@ -118,19 +118,20 @@ class Controller:
 
 
 
-    def timepassing(self):
-        time.sleep(5)
+    def timepassing(self, days):
+        #time.sleep(5)
         #self.schedule_timepassing(5)
+        for i in range(0, int(days)):
 
-        if random.uniform(0,1) < EVENTLIKELYNESS:
-            self.randomEvent()
-            time.sleep(2)
-        else:
-            if random.uniform(0,1) < EVENTLIKELYNESS * 3:
-                for block in self.populationBlocks:
-                    block.spreadStats()
+            if random.uniform(0,1) < EVENTLIKELYNESS:
+                self.randomEvent()
+                #time.sleep(2)
+            else:
+                if random.uniform(0,1) < EVENTLIKELYNESS * 3:
+                    for block in self.populationBlocks:
+                        block.spreadStats()
 
-        utils.drawGraph(self.populationBlocks, GRAPHRANGE)
+        #utils.drawGraph(self.populationBlocks, GRAPHRANGE)
 
         ##self.thread2.run()
 
